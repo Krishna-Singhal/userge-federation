@@ -1,11 +1,11 @@
 import setuptools
 
 setuptools.setup(
-    name="Userge Federation",
-    version="0.4.0",
+    name="userge_fed",
+    version="0.0.2",
     author="Krishna-Singhal",
     author_email="ylikehits3@gmail.com",
-    description="A small example package",
+    description="wrapper for https://api.userge.tk",
     url="https://github.com/Krishna-Singhal/userge-federation",
     project_urls={
         "Bug Tracker": "https://github.com/Krishna-Singhal/userge-federation/issues",
