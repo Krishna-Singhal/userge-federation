@@ -1,8 +1,12 @@
+import re
 import setuptools
+
+with open("userge_fed/__init__.py", encoding="utf-8") as f:
+    version = re.findall(r"__version__ = \"(.+)\"", f.read())[0]
 
 setuptools.setup(
     name="userge_fed",
-    version="0.0.2",
+    version=version,
     author="Krishna-Singhal",
     author_email="ylikehits3@gmail.com",
     description="wrapper for https://api.userge.tk",
@@ -14,5 +18,8 @@ setuptools.setup(
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
         "Operating System :: OS Independent",
-    ]
+    ],
+    install_requires=["requests"],
+    package_data={"userge_fed": ["__init__.py", "client.py", "errors.py"]},
+    python_requires=">=3.6",
 )
