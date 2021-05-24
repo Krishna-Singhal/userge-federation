@@ -1,10 +1,12 @@
 import re
 import setuptools
-from UsergeAntiSpamApi import __version__
+
+with open("UsergeAntiSpamApi/__init__.py", encoding="utf-8") as f:
+    version = re.findall(r"__version__ = \"(.+)\"", f.read())[0]    
 
 setuptools.setup(
     name="UsergeAntiSpamApi",
-    version=__version__,
+    version=version,
     author="Krishna-Singhal",
     author_email="ylikehits3@gmail.com",
     description="wrapper for https://api.userge.tk",
