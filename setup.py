@@ -1,12 +1,10 @@
 import re
 import setuptools
-
-with open("userge_fed/__init__.py", encoding="utf-8") as f:
-    version = re.findall(r"__version__ = \"(.+)\"", f.read())[0]
+from UsergeAntiSpamApi import __version__
 
 setuptools.setup(
-    name="userge_fed",
-    version=version,
+    name="UsergeAntiSpamApi",
+    version=__version__,
     author="Krishna-Singhal",
     author_email="ylikehits3@gmail.com",
     description="wrapper for https://api.userge.tk",
@@ -20,7 +18,6 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     install_requires=["requests"],
-    # package_data={"userge_fed": ["__init__.py", "client.py", "errors.py"]},
-    packages=['userge_fed'],
+    packages=['UsergeAntiSpamApi'],
     python_requires=">=3.6",
 )
