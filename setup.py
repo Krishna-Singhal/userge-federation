@@ -20,6 +20,7 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     install_requires=["requests"],
-    package_data={"userge_fed": ["__init__.py", "client.py", "errors.py"]},
+    # package_data={"userge_fed": ["__init__.py", "client.py", "errors.py"]},
+    packages=['userge_fed'],
     python_requires=">=3.6",
 )
