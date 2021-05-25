@@ -19,7 +19,7 @@ class Client(object):
         return requests.get("https://api.userge.tk")
     
     def getban(self, user_id: int):
-        return requests.get("https://api.userge.tk/ban?user_id={}".format(user_id)).json()
+        return requests.get(f"https://api.userge.tk/ban?api_key={self.token}&user_id={user_id}").json()
     
     def getbans(self):
         return requests.get("https://api.userge.tk/ban")
