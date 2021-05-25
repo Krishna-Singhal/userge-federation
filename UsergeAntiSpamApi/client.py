@@ -18,10 +18,10 @@ class Client(object):
     def get_api_stats(self):
         return requests.get("https://api.userge.tk")
     
-    def getban(self, user_id: int):
+    def get_ban(self, user_id: int):
         return requests.get("https://api.userge.tk/ban?user_id={}".format(user_id)).json()
     
-    def getbans(self):
+    def get_bans(self):
         return requests.get("https://api.userge.tk/ban")
 
     def add_ban(self, user_id: int, reason: str):
