@@ -123,6 +123,6 @@ Copyright (C) 2021 by UsergeTeam@Github, < https://github.com/UsergeTeam >.
 
 This project is part of < https://github.com/UsergeTeam > project,
 and is released under the "GNU v3.0 License Agreement".
-Please see < https://github.com/Krishna-Singhal/Userge-Federation/blob/master/LICENSE >
+Please see < https://github.com/UsergeTeam/Userge-Federation/blob/master/LICENSE >
 
 All rights reserved.
