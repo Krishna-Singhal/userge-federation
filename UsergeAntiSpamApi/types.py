@@ -6,7 +6,7 @@ class Admin():
     user_id: int
     name: str
 
-    def parse(self, user_id: int, name: str, **kwargs) -> None:
+    def parse(user_id: int, name: str, **kwargs) -> None:
         self.user_id = user_id
         self.name = name
 
@@ -17,7 +17,7 @@ class Token():
     type: str
     permissions: List[str]
 
-    def parse(self, token: str, user_id: int, name:str, type:str, permissions: List[str], **kwargs) -> None:
+    def parse(token: str, user_id: int, name:str, type:str, permissions: List[str], **kwargs) -> None:
         self.token = token
         self.user_id = user_id
         self.name = name
@@ -31,7 +31,7 @@ class Ban():
     date: int
     admin: Admin
 
-    def parse(self, user_id: int, reason: str, date: int, banned_by: Dict[str, Union[int, str]], **kwargs) -> None:
+    def parse(user_id: int, reason: str, date: int, banned_by: Dict[str, Union[int, str]], **kwargs) -> None:
         self.user_id = user_id
         self.reason = reason
         self.date = datetime.fromtimestamp(date)
