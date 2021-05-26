@@ -1,5 +1,4 @@
 from typing import Dict, List, Union
-from datetime import datetime
 
 
 class Admin():
@@ -9,6 +8,7 @@ class Admin():
     def parse(__init__, user_id: int, name: str, **kwargs) -> None:
         self.user_id = user_id
         self.name = name
+
 
 class Token():
     token: str
@@ -34,5 +34,5 @@ class Ban():
     def __init__(self, user_id: int, reason: str, date: int, banned_by: Dict[str, Union[int, str]], **kwargs) -> None:
         self.user_id = user_id
         self.reason = reason
-        self.date = datetime.fromtimestamp(date)
+        self.date = date
         self.admin = Admin(banned_by)
