@@ -35,7 +35,7 @@ class Client(object):
         response = requests.get(f"https://api.userge.tk/ban?api_key={self.token}&user_id={user_id}")
         if response.status_code == 201:
             if response.json()["success"]:
-                return Ban.parse(**response.json())
+                return Ban(**response.json())
             else:
                 return False
         else:
@@ -45,7 +45,7 @@ class Client(object):
         response = requests.get("https://api.userge.tk/ban")
         if response.status_code == 201:
             if response.json()["success"]:
-                return [Ban.parse(**data) for data in response.json()["users"]]
+                return [Ban(**data) for data in response.json()["users"]]
         else:
             self._raise_error(response)
 
