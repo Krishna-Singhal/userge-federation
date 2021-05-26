@@ -35,4 +35,4 @@ class Ban():
         self.user_id = user_id
         self.reason = reason
         self.date = date
-        self.admin = Admin(banned_by)
+        self.admin = Admin(**banned_by)
