@@ -5,7 +5,7 @@ class Admin():
     user_id: int
     name: str
 
-    def parse(__init__, user_id: int, name: str, **kwargs) -> None:
+    def __init__(self, user_id: int, name: str, **kwargs) -> None:
         self.user_id = user_id
         self.name = name
 
