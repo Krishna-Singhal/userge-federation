@@ -20,21 +20,21 @@ class Client(object):
     def get_version(self) -> str:
         response = requests.get("https://api.userge.tk/version")
         if response.status_code == 201:
-            return response["version"]
+            return response.json()["version"]
         else:
             self._raise_error(response)
     
     def get_api_stats(self) -> int:
         response = requests.get("https://api.userge.tk/stats")
         if response.status_code == 201:
-            return int(response["number_of_bans"])
+            return int(response.json()["number_of_bans"])
         else:
             self._raise_error(response)
     
     def getban(self, user_id: int) -> Union[Ban, bool]:
         response = requests.get(f"https://api.userge.tk/ban?api_key={self.token}&user_id={user_id}")
         if response.status_code == 201:
-            if response["success"]:
+            if response.json()["success"]:
                 return Ban.parse(**response.json())
             else:
                 return False
@@ -44,7 +44,7 @@ class Client(object):
     def getbans(self) -> Union[List[Ban], bool]:
         response = requests.get("https://api.userge.tk/ban")
         if response.status_code == 201:
-            if response["success"]:
+            if response.json()["success"]:
                 return [Ban.parse(**data) for data in response.json()["users"]]
         else:
             self._raise_error(response)
